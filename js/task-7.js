@@ -21,3 +21,18 @@ console.log(filterArray([1, NaN, Infinity])); // [1]
 console.log(filterArray([0, -0, 100, "100"])); // [0, 0, 100]
 console.log(filterArray([undefined, false, null, [], 1])); // [1]
 console.log(filterArray([{}, () => {}, 2])); // [2]
+// ------------------------------------------------------------
+
+// Задача 6-7
+// reduce
+// Получи общую сумму баланса (сумму значений свойства balance) всех пользователей.
+
+// Используй деструктурирующее присваивание для параметра функции {balance} без пробелов и переносов на новую строку
+
+// Используй только перебирающие методы массива которые не изменяют (не мутируют) исходный массив. 
+// Т.е. нельзя использовать for, splice, push и т.п. мутирующие методы.
+
+// Write code under this line
+const calculateTotalBalance = array => array.reduce((acc, {balance}) => {return acc + balance}, 0);
+
+console.log(calculateTotalBalance(users)); // 20916
